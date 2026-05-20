@@ -84,22 +84,7 @@ function typeEffect() {
     setTimeout(typeEffect, typeSpeed);
 }
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const subject = this.querySelectorAll('input[type="text"]')[1].value;
-    const message = this.querySelector('textarea').value;
-    
-    // In a real application, you would send this data to a server
-    // For now, we'll just show an alert
-    alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-    
-    // Reset form
-    this.reset();
-});
+
 
 function setActiveNavLink(){
     const sections=document.querySelectorAll('section');
@@ -134,4 +119,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger initial check for animations
     handleScrollAnimations();
     setActiveNavLink();
+});
+
+ emailjs.init("Yn9stdxGrVglDhEzU");
+
+const form = document.getElementById("contactForm");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    result.innerHTML = "Sending...";
+
+    emailjs.sendForm(
+        "service_rlt24p7",
+        "template_b0v3vla",
+        this
+    )
+    .then(function() {
+        result.innerHTML = "Message sent successfully!";
+        form.reset();
+    })
+    .catch((error) => {
+    console.log("EMAILJS ERROR:", error);
+
+    result.innerHTML =
+        "Failed: " +
+        (error.text || error.message);
+});
 });

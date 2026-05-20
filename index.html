@@ -72,7 +72,7 @@
         <h2 class="section-title">My Skills</h2>
         <div class="skills-content">
             <div class="technical-skills">
-                <h3>Technical Skills</h3>
+                
                 <div class="skill-item">
                     <div class="skill-info">
                         <span>HTML</span>
@@ -187,20 +187,26 @@
 
         <div class="contact-form">
                     <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Enter Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Enter Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Enter Your Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Enter Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
+    <div class="form-group">
+        <input type="text" name="from_name" placeholder="Enter Your Name" required>
+    </div>
+
+    <div class="form-group">
+        <input type="email" name="from_email" placeholder="Enter Your Email" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="subject" placeholder="Enter Your Subject" required>
+    </div>
+
+    <div class="form-group">
+        <textarea name="message" placeholder="Enter Your Message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+
+    <p id="result"></p>
+</form>
                 </div>
       </div>
     </div> 
@@ -211,7 +217,7 @@
       <p>©Bikash Ghimire 2026</p>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="javascript/script.js"></script>
 </body>
 </html>
