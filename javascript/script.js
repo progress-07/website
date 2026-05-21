@@ -148,3 +148,16 @@ form.addEventListener("submit", function(event) {
         (error.text || error.message);
 });
 });
+function toggleInfo(event) {
+    event.preventDefault();
+
+    const moreInfo = document.getElementById("moreInfo");
+
+    if (moreInfo.style.display === "none") {
+        moreInfo.style.display = "block";
+        event.target.textContent = "Show Less";
+    } else {
+        moreInfo.style.display = "none";
+        event.target.textContent = "More About Me";
+    }
+}
