@@ -65,6 +65,13 @@ html {
     text-decoration: none;
 }
 
+.logosection img
+{
+    width: 50px;
+    height: 45px;
+    display: block;
+}
+
 .nav-links
 {
     list-style: none;
