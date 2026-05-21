@@ -70,6 +70,7 @@ html {
     width: 50px;
     height: 45px;
     display: block;
+    object-fit: contain;
 }
 
 .nav-links
